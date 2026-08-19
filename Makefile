@@ -6,7 +6,7 @@ BUILD := build
 
 # --- Targets -------------------------------------------------------------
 
-all: $(BUILD)/ome-cli $(BUILD)/ome-tests
+all: $(BUILD)/ome-cli
 
 $(BUILD):
 	mkdir -p $(BUILD)
