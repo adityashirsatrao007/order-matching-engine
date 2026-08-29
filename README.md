@@ -1,4 +1,5 @@
 # 🔒 Order Matching Engine
+[![CI](https://github.com/adityashirsatrao007/order-matching-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/adityashirsatrao007/order-matching-engine/actions/workflows/ci.yml)
 
 A **low-latency limit order matching engine** with price-time priority,
 written in C++17 with zero external dependencies. Built to be a
@@ -109,3 +110,14 @@ uvicorn main:app --reload --port 8000
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+## Contributing
+
+Contributions are welcome! For significant changes, please open an issue first to discuss the proposal.
+
+1. Fork the repository and create a feature branch.
+2. Make your changes (add tests where applicable).
+3. Ensure the CI workflow passes.
+4. Open a pull request with a clear description.
+
+This project is released under the MIT License — see [`LICENSE`](LICENSE).
