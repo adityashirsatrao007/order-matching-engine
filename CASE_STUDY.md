@@ -45,4 +45,4 @@ A small, deterministic design rather than a monolith:
 
 ## 6. What recruiters should ask in interviews
 
-How FIFO-within-level is guaranteed, why price-time priority prevents front-running, the the cost-model of the selected data structures, and how we benchmarked 10.9M ops/sec reproducibly.
+How FIFO-within-level is guaranteed, why price-time priority prevents front-running, the cost-model of the selected data structures, and how we benchmark ~800K orders/sec reproducibly.
