@@ -22,7 +22,7 @@ a trade tape, and a WebSocket market-data feed.
                      └──────────────────────────┘
 ```
 
-> **⚡ Impact:** **10.9M+ matches/sec** (bench) · deterministic C++17 matching core, zero deps · price-time priority + FIFO · GTC / IOC / FOK · live trade tape + depth via FastAPI **WebSocket**
+> **⚡ Impact:** **~1.3 µs/order, ~800K orders/sec** single-threaded (`make bench`) · deterministic C++17 matching core, zero deps · price-time priority + FIFO · GTC / IOC / FOK · live trade tape + depth via FastAPI **WebSocket**
 >
 > 🖥️ **Live demo:** <https://hobby-held-addition-plot.trycloudflare.com> — submit orders and watch fills on the public REST API
 

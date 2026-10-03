@@ -1,6 +1,6 @@
 # Case Study — Order Matching Engine (C++17)
 
-**Role:** Creator / Lead Engineer · **Benchmark:** 10.9M+ orders/sec
+**Role:** Creator / Lead Engineer · **Benchmark:** ~1.3 µs/order — ~800K orders/sec single-threaded (bench/BENCHMARK.md)
 
 ## 1. The problem
 
@@ -28,18 +28,18 @@ A small, deterministic design rather than a monolith:
 ## 3. Why C++17 with zero dependencies
 
 - One `g++ -std=c++17` invocation builds the CLI; the binary can move anywhere.
-- Manual control over memory layout/allocations is what buys the 10.9M ops/sec figure in the bench.
+- Manual control over memory layout/allocations is what buys the ~800K orders/sec figure in the bench (single-threaded).
 - The engine compiles to a standalone CLI (`--bench`) so performance is measurable and reproducible by anyone cloning the repo.
 
 ## 4. Results
 
-- **10.9M+ orders/sec** in the bundled bench (see `bench/BENCHMARK.md`).
+- **~1.3 µs/order (~800K orders/sec)** single-threaded in the bundled bench — method, hardware and two timed runs recorded in `bench/BENCHMARK.md`.
 - Full REST + WebSocket API on top, so the exact same engine powers a live trading-demo UI.
 - Deterministic matching semantics — same inputs, same fills, every run (the property exchanges are legally required to have).
 
 ## 5. What I'd do differently
 
-- NUMA-aware allocation and prefetching for cache-locality tuning at the 10^7 ops scale.
+- NUMA-aware allocation and prefetching for cache-locality tuning at the 10^6 orders/sec scale.
 - A true event-loop/actor layer to pipeline inbound order submission over the lock-free core.
 - Order book snapshotting + journaling for crash-replay (production exchanges persist the tape).
 
